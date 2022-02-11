@@ -133,6 +133,9 @@ export class TranspiledSvelteDocument implements ITranspiledSvelteDocument {
             }
         );
 
+        // NodeKit: Remove <data> block before Svelte sees it.
+        preprocessed.code = preprocessed.code.replace(/<data>(.*?)<\/data>/s, '<!--  $1    -->')
+
         if (preprocessed.code === document.getText()) {
             return new TranspiledSvelteDocument(document.getText());
         }

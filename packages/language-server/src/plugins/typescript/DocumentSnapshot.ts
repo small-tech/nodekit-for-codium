@@ -174,7 +174,9 @@ function preprocessSvelteFile(document: Document, options: SvelteSnapshotOptions
         : ts.ScriptKind.JSX;
 
     try {
-        const tsx = svelte2tsx(text, {
+        // NodeKit: Remove <data> block before svelte2tsx sees it.
+        const tsx = svelte2tsx(text.replace(/<data>(.*?)<\/data>/s, '<!--  $1    -->'), {
+        // const tsx = svelte2tsx(text, {
             filename: document.getFilePath() ?? undefined,
             isTsFile: options.useNewTransformation
                 ? scriptKind === ts.ScriptKind.TS

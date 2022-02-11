@@ -50,7 +50,7 @@
         }
     },
     "contributes": {
-        "typescriptServerPlugins-disabled": [
+        "typescriptServerPlugins": [
             {
                 "name": "typescript-svelte-plugin",
                 "enableForWorkspaceTypeScriptVersions": true
@@ -421,7 +421,8 @@
                     "svelte"
                 ],
                 "extensions": [
-                    ".svelte"
+                    ".svelte",
+                    ".page"
                 ],
                 "configuration": "./language-configuration.json"
             },
