@@ -134,7 +134,7 @@ export function activate(context: ExtensionContext) {
                     }).join('\n')
                 
                     // Note: The empty strings replace the <data> and </data> tags.
-                    content = beforeNodeScriptPlaceholder + '<script>' + nodeScript + '</script>' + afterNodeScriptPlaceholder
+                    content = beforeNodeScriptPlaceholder + '      ' + nodeScript + '       ' + afterNodeScriptPlaceholder
 
                     console.log(content)
                 }
