@@ -422,6 +422,7 @@
                 ],
                 "extensions": [
                     ".svelte",
+                    ".component",
                     ".page"
                 ],
                 "configuration": "./language-configuration.json"
@@ -430,6 +431,15 @@
                 "id": "json",
                 "filenames": [
                     ".prettierrc"
+                ]
+            },
+            {
+                "id": "javascript",
+                "extensions": [
+                    ".data",
+                    ".get",
+                    ".post",
+                    ".socket"
                 ]
             }
         ],
