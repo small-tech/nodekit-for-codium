@@ -50,7 +50,7 @@
         }
     },
     "contributes": {
-        "typescriptServerPlugins": [
+        "typescriptServerPlugins-disabled": [
             {
                 "name": "typescript-svelte-plugin",
                 "enableForWorkspaceTypeScriptVersions": true
@@ -421,9 +421,7 @@
                     "svelte"
                 ],
                 "extensions": [
-                    ".svelte",
-                    ".component",
-                    ".page"
+                    ".svelte"
                 ],
                 "configuration": "./language-configuration.json"
             },
@@ -431,15 +429,6 @@
                 "id": "json",
                 "filenames": [
                     ".prettierrc"
-                ]
-            },
-            {
-                "id": "javascript",
-                "extensions": [
-                    ".data",
-                    ".get",
-                    ".post",
-                    ".socket"
                 ]
             }
         ],

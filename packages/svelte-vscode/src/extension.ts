@@ -85,77 +85,8 @@ export function activate(context: ExtensionContext) {
         console.log('setting server runtime to', serverRuntime);
     }
 
-    const virtualDocumentContents = new Map()
-
-    workspace.registerTextDocumentContentProvider('nodekit-embedded-content', {
-      provideTextDocumentContent: uri => {
-        console.log('((((nodekit document provider))))')
-        const originalUri = uri.path.slice(1).replace('.mjs', '')
-        const decodedUri = decodeURIComponent(originalUri)
-        return virtualDocumentContents.get(decodedUri)
-      }
-    })
-
     const clientOptions: LanguageClientOptions = {
         documentSelector: [{ scheme: 'file', language: 'svelte' }],
-
-        middleware: {
-            provideCompletionItem: async (document, position, context, token, next) => {
-                const originalUri = document.uri.toString()
-      
-                const documentText = document.getText()
-                const documentOffset = document.offsetAt(position)
-
-                const documentTextWithPositionToken = documentText.substring(0, documentOffset) + '__POSITION__' + documentText.slice(documentOffset)
-
-                const r = /<data>.*?__POSITION__.*?<\/data>/s
-                if (r.exec(documentTextWithPositionToken) === null) {
-                    // Not in <data>…</data> region. Don’t forward the request.
-                    return await next(document, position, context, token);
-                }
-
-                console.log('<<<<<<<<<< HIJACKING <DATA> BLOCK! >>>>>>>>>>>>')
-
-                const authority = 'mjs'
-                const separateNodeScriptRegExp = new RegExp("^(.*?)<data>(.*?)<\/data>(.*?)$", 's')
-                const groups = separateNodeScriptRegExp.exec(documentText)
-                
-                let content = documentText
-                
-                if (groups) {
-                    const beforeNodeScriptPlaceholder = groups[1].split('\n').map(line => {
-                        return ' '.repeat(line.length)
-                    }).join('\n')
-                
-                    const nodeScript = groups[2]
-                
-                    const afterNodeScriptPlaceholder = groups[3].split('\n').map(line => {
-                        return ' '.repeat(line.length)
-                    }).join('\n')
-                
-                    // Note: The empty strings replace the <data> and </data> tags.
-                    content = beforeNodeScriptPlaceholder + '      ' + nodeScript + '       ' + afterNodeScriptPlaceholder
-
-                    console.log(content)
-                }
-
-                virtualDocumentContents.set(originalUri, content)
-        
-                const virtualDocumentUriString = `nodekit-embedded-content://${authority}/${encodeURIComponent(originalUri)}.${authority}`
-        
-                console.log(virtualDocumentUriString)
-        
-                const virtualDocumentUri = Uri.parse(virtualDocumentUriString)
-        
-                return await commands.executeCommand(
-                    'vscode.executeCompletionItemProvider',
-                    virtualDocumentUri,
-                    position,
-                    context.triggerCharacter
-                )
-            }
-        },
-
         revealOutputChannelOn: RevealOutputChannelOn.Never,
         synchronize: {
             // TODO deprecated, rework upon next VS Code minimum version bump
