@@ -1,5 +1,5 @@
 {
-    "name": "svelte-vscode",
+    "name": "nodekit-for-codium",
     "version": "0.5.0",
     "description": "NodeKit language support for Codium",
     "main": "dist/src/extension.js",
