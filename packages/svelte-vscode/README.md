@@ -1,4 +1,10 @@
-# Svelte for VS Code
+# NodeKit for Codium
+
+Currently all this extension does is hide the `<data>` section of a `.page` so Svelte doesn’t complain about it and provide _very_ basic completions (not Node-specific) and syntax highlighting for `<data>` blocks.
+
+__Note: this will clash with the original Svelte Language Tools extension. Please disable that to use it.__
+
+Original documentation for Svelte Language Tools, which is what this is forked from, is below:
 
 Provides syntax highlighting and rich intellisense for Svelte components in VS Code, using the [svelte language server](/packages/language-server).
 

@@ -1,7 +1,7 @@
 {
     "name": "svelte-vscode",
     "version": "0.5.0",
-    "description": "Svelte language support for VS Code",
+    "description": "NodeKit language support for Codium",
     "main": "dist/src/extension.js",
     "scripts": {
         "build:grammar": "npx js-yaml syntaxes/svelte.tmLanguage.src.yaml > syntaxes/svelte.tmLanguage.json && npx js-yaml syntaxes/postcss.src.yaml > syntaxes/postcss.json",
@@ -13,13 +13,13 @@
     },
     "repository": {
         "type": "git",
-        "url": "https://github.com/sveltejs/language-tools.git"
+        "url": "https://github.com/small-tech/nodekit-for-codium.git"
     },
     "keywords": [
         "svelte",
         "vscode"
     ],
-    "author": "James Birtles <jameshbirtles@gmail.com> & the Svelte Core Team",
+    "author": "James Birtles <jameshbirtles@gmail.com> & the Svelte Core Team (with NodeKit modifications by Aral Balkan)",
     "license": "MIT",
     "bugs": {
         "url": "https://github.com/sveltejs/language-tools/issues"

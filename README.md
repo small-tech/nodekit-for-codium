@@ -1,6 +1,6 @@
 # NodeKit for Codium
 
-Currently all this extension does is hide the <data> section of a `.page` so Svelte doesn’t complain about it.
+Currently all this extension does is hide the `<data>` section of a `.page` so Svelte doesn’t complain about it and provide _very_ basic completions (not Node-specific) and syntax highlighting for `<data>` blocks.
 
 Original documentation for Svelte Language Tools, which is what this is forked from, is below:
 
