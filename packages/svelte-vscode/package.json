@@ -25,8 +25,8 @@
         "url": "https://github.com/sveltejs/language-tools/issues"
     },
     "homepage": "https://github.com/sveltejs/language-tools#readme",
-    "displayName": "Svelte for VS Code",
-    "publisher": "svelte",
+    "displayName": "NodeKit for Codium",
+    "publisher": "small-tech.org",
     "icon": "icons/logo.png",
     "galleryBanner": {
         "color": "#FF3E00",
@@ -58,7 +58,7 @@
         ],
         "configuration": {
             "type": "object",
-            "title": "Svelte",
+            "title": "NodeKit (Svelte)",
             "properties": {
                 "svelte.enable-ts-plugin": {
                     "type": "boolean",
@@ -421,7 +421,11 @@
                     "svelte"
                 ],
                 "extensions": [
-                    ".svelte"
+                    ".svelte",
+                    ".page",
+                    ".component",
+                    ".get",
+                    ".post"
                 ],
                 "configuration": "./language-configuration.json"
             },
