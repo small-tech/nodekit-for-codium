@@ -16,6 +16,7 @@
         "url": "https://github.com/small-tech/nodekit-for-codium.git"
     },
     "keywords": [
+        "nodekit",
         "svelte",
         "vscode"
     ],
