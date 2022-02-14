@@ -1,7 +1,7 @@
 {
-    "name": "svelte-language-server",
+    "name": "@small-tech/nodekit-language-server",
     "version": "0.14.0",
-    "description": "A language server for Svelte",
+    "description": "A language server for NodeKit (Svelte fork)",
     "main": "dist/src/index.js",
     "typings": "dist/src/index",
     "scripts": {
@@ -15,16 +15,17 @@
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/sveltejs/language-tools.git"
+        "url": "git+https://github.com/small-tech/nodekit-for-codium.git"
     },
     "keywords": [
+        "nodekit",
         "svelte",
         "vscode",
         "atom",
         "editor",
         "language-server"
     ],
-    "author": "James Birtles <jameshbirtles@gmail.com> and the Svelte Language Tools contributors",
+    "author": "James Birtles <jameshbirtles@gmail.com> and the Svelte Language Tools contributors with NodeKit modifications by Aral Balkan",
     "license": "MIT",
     "bugs": {
         "url": "https://github.com/sveltejs/language-tools/issues"
