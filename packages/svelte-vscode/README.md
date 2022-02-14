@@ -1,10 +1,22 @@
 # NodeKit for Codium
 
-Currently all this extension does is hide the `<data>` section of a `.page` so Svelte doesn’t complain about it and provide _very_ basic completions (not Node-specific) and syntax highlighting for `<data>` blocks.
+Currently all this extension does is:
+
+  - Hide the `<data>` section of a `.page` so Svelte doesn’t complain about it.
+
+  - Provide JavaScript syntax highlighting for `<data>` blocks.
+
+  - Provide _very_ basic JavaScript completions (not Node-specific) for `<data>` blocks.
+
+  - Provide JavaScript syntax highlighting and language intelligence for _.data_, _.get_, _.post_, and _.socket_ files.
 
 __Note: this will clash with the original Svelte Language Tools extension. Please disable that to use it.__
 
-Original documentation for Svelte Language Tools, which is what this is forked from, is below:
+> ⚠️ The Codium extension is at a very early stage and it will likely stay there for a while unless someone wants to help with it. I want to get a first-class language server for NodeKit that can be used not just in Codium but other editors also but it’s not a trivial undertaking and I’m going to be return to working on the core of NodeKit now.
+>
+> __If anyone wants to help with this, please drop a note in the issues.__
+
+> 💡 Original documentation for Svelte Language Tools, which is what this is forked from, continues below:
 
 Provides syntax highlighting and rich intellisense for Svelte components in VS Code, using the [svelte language server](/packages/language-server).
 
