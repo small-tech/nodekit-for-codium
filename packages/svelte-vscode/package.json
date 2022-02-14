@@ -586,7 +586,7 @@
     },
     "dependencies": {
         "lodash": "^4.17.21",
-        "nodekit-language-server": "*",
+        "@small-tech/nodekit-language-server": "*",
         "vscode-languageclient": "^7.0.0",
         "typescript-svelte-plugin": "*"
     }
