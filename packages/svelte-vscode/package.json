@@ -435,6 +435,15 @@
                 "filenames": [
                     ".prettierrc"
                 ]
+            },
+            {
+                "id": "javascript",
+                "extensions": [
+                    ".data",
+                    ".get",
+                    ".post",
+                    ".socket"
+                ]
             }
         ],
         "jsonValidation": [
