@@ -15,7 +15,7 @@ injections:
 
   # Style/Script Languages
   # JavaScript | 'javascript' | 'source.js'
-  'L:(meta.script.svelte | meta.style.svelte) (meta.lang.js | meta.lang.javascript) - (meta source)':
+  'L:(meta.script.svelte | meta.style.svelte | meta.data.svelte) (meta.lang.js | meta.lang.javascript) - (meta source)':
     patterns: [{begin: '(?<=>)(?!</)', end: '(?=</)', name: meta.embedded.block.svelte,
     contentName: source.js, patterns: [{ include: source.js }]}]
 
@@ -34,6 +34,12 @@ injections:
   'L:meta.script.svelte - meta.lang - (meta source)':
     patterns: [{begin: '(?<=>)(?!</)', end: '(?=</)', name: meta.embedded.block.svelte,
     contentName: source.js, patterns: [{ include: source.js }]}]
+
+  # <data> block
+  'L:meta.data.svelte - meta.lang - (meta source)':
+    patterns: [{begin: '(?<=>)(?!</)', end: '(?=</)', name: meta.embedded.block.svelte,
+    contentName: source.js, patterns: [{ include: source.js }]}]
+
 
   # ----
 
@@ -520,7 +526,7 @@ repository:
 
   # Language tags - they are handled differently for the purposes of language injection.
   tags-lang:
-    begin: <(script|style|template)
+    begin: <(script|style|template|data)
     end: </\1\s*>|/>
     beginCaptures: { 0: { patterns: [ include: '#tags-start-node' ] } }
     endCaptures: { 0: { patterns: [ include: '#tags-end-node' ] } }
