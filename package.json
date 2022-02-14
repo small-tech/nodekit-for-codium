@@ -1,7 +1,7 @@
 {
-    "name": "@svelte/language-tools",
+    "name": "@small-tech/nodekit-for-codium",
     "version": "1.0.0",
-    "author": "Svelte Contributors",
+    "author": "Svelte Contributors (with minor modifications by Aral Balkan)",
     "license": "MIT",
     "private": true,
     "workspaces": [
