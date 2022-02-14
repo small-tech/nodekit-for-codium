@@ -1,16 +1,8 @@
-<p>
-  <a href="https://svelte.dev">
-	<img alt="Cybernetically enhanced web apps: Svelte" src="https://user-images.githubusercontent.com/49038/76711598-f0b39180-66e7-11ea-9501-37f6e1edf8a6.png">
-  </a>
+# NodeKit for Codium
 
-  <a href="https://www.npmjs.com/package/svelte">
-    <img src="https://img.shields.io/npm/v/svelte.svg" alt="npm version">
-  </a>
+Currently all this extension does is hide the <data> section of a `.page` so Svelte doesn’t complain about it.
 
-  <a href="https://github.com/sveltejs/svelte/blob/master/LICENSE">
-    <img src="https://img.shields.io/npm/l/svelte.svg" alt="license">
-  </a>
-</p>
+Original documentation for Svelte Language Tools, which is what this is forked from, is below:
 
 [IDE docs and troubleshooting](docs)
 
