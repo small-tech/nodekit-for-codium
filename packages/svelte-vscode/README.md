@@ -16,6 +16,13 @@ __Note: this will clash with the original Svelte Language Tools extension. Pleas
 >
 > __If anyone wants to help with this, please drop a note in the issues.__
 
+## Packaging
+
+```
+npm i 
+vsce package --no-yarn
+```
+
 > 💡 Original documentation for Svelte Language Tools, which is what this is forked from, continues below:
 
 Provides syntax highlighting and rich intellisense for Svelte components in VS Code, using the [svelte language server](/packages/language-server).
